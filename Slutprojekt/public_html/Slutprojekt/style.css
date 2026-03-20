@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+
+:root {
+    --mainWidth: 50rem;
+    --background-color: rgb(236, 236, 236);
+    --second-color: #e10531;
+    --hovercolor: #ae001a;
+    --primary-color: white;
+    --text-color: black;
+}
+
+.darkmode {
+    --background-color: rgb(16, 16, 16);
+    --second-color: #140079;
+    --hovercolor: #140755;
+    --primary-color:  rgb(39, 39, 39);
+    --text-color: white;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: "Inter", sans-serif;
+    color: var(--text-color );
+}
+
+
+main,header {
+    max-width: var(--mainWidth);
+    margin: auto;
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 16rem;
+}
+
+#theme-switch svg{
+  fill: var(--primary-color)
+}
+#theme-switch svg:last-child{
+    display: none;
+}
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+.darkmode #theme-switch svg:last-child{
+    display: block;
+}
+
+nav{
+    max-width: var(--mainWidth);
+    background-color: var(--second-color);
+    margin: auto;
+    display: flex;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.7rem;
+}
+nav a:hover{
+    background-color: var(--hovercolor)
+}
+
+footer{
+    background-color: var(--second-color);
+    margin: auto;
+    max-width: var(--mainWidth);
+}
