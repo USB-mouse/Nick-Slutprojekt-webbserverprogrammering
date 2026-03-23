@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+
+{% block main %}
+  
+
+<h1>review</h1>
+    
+<div>
+    
+        {% for item in review %}
+        <div>
+          <h3>{{ item.ReviewTitle }} </h2>  
+         
+         <p> {{ item.ReviewContent }} </p>
+          <p><i> {{ item.User }} vid {{item.ReviewTime | date("d/m-Y h:i") }} </i></p>
+        </div>
+      {% else %}
+        <div>Finns inga review</div>
+        {% endfor %}
+</div>
+    
+  {% endblock %}

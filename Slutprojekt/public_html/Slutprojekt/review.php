@@ -1,0 +1,13 @@
+<?php
+require_once('../../Slutprojekt-app.php');
+
+
+$ReviewStmt = $pdo->prepare("SELECT * FROM Reviews WHERE MovieId = :MovieId");
+$ReviewStmt -> execute(["MovieId" => $_GET["MovieId"]]);
+$ReviewResult = $ReviewStmt->fetchAll();
+
+$view["review"] = $ReviewResult;
+
+// print_r($userResult);
+
+$twig->display('review.html.twig', context: $view );

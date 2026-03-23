@@ -81,6 +81,29 @@ nav a:hover{
     background-color: var(--hovercolor)
 }
 
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+td, th {
+    border: solid 1px rgb(53, 53, 53);
+    padding: 0.5rem 0.75rem;
+}
+th {
+    background-color: var(--second-color);
+    color: white;
+}
+td a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+td a:hover {
+    color: var(--second-color);
+}
+tr:nth-child(odd) {
+    background-color: rgb(228, 221, 226);
+}
+
 footer{
    padding: 0.1rem;
 }

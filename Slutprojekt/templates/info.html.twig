@@ -15,8 +15,11 @@ Work in progress
             <td>  {{ item.ReleaseYear }}</td> 
             <td>  {{ item.Genre   }}</td> 
         </tr>
+
+        <a href="{{url("review.php")}}?MovieId={{ item.MovieId }}">+reviews</a>
       {% endfor %}
         </table>
+
 
 
 {% endblock %}

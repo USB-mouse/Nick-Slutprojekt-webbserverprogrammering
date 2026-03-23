@@ -2,12 +2,16 @@
 {% block main %}
   
 <h1>Movies</h1>
-<ul>
- {% for item in movies %}
-    <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}"><li>{{ item.Title }}</li></a>  
-   
-    {% endfor %}
-  </ul>
+  <table>
+        <tr>
+            <th>Movies</th>
+        </tr>
+{% for item in movies %}
+        <tr>
+            <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
+        </tr>
+  {% endfor %}
+    </table>
      <h1>Your watchlist</h1>
      <h3>work in progress, log in to access</h3>
      
