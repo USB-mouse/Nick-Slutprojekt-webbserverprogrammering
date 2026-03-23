@@ -23,12 +23,10 @@
   </header>
 <nav>
   <a href="{{url("index.php")}}">Start</a>
-  <a href="{{url("slump.php")}}">Slump</a>
-   {% if username %}
-  <a href="{{url("posts.php")}}">Post</a>
-   {% endif %}
-  <a href="{{url("log/login.php")}}">Logga in</a>
-  {% if username %}  <a href="{{url("log/logout.php")}}">Logga out</a>{% endif %}
+  <a href="{{url("login/login.php")}}">Logga in</a>
+  {% if username %}  
+  <a href="{{url("login/logout.php")}}">Logga out</a>
+  {% endif %}
   
 </nav>
 
@@ -40,7 +38,12 @@
 
 <footer>
       {% block footer %}
-      Min footer
+     
+        <b>
+            <h5>Kontakt och support</h5>
+                <h6>Mail: nicsal0124@skola.goteborg.se <br>
+                Telefon: 0706769420</h6>
+            </b>
       {% endblock %}
 </footer>
 

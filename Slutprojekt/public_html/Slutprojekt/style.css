@@ -22,32 +22,35 @@
 
 body {
     background-color: var(--background-color);
-    font-family: "Inter", sans-serif;
     color: var(--text-color );
+    margin: auto;
 }
 
+main, header {
+     background-color: var(--primary-color);
+}
 
-main,header {
-    max-width: var(--mainWidth);
-    margin: auto;
-    background-color: var(--primary-color);
+header{
+ padding: 0.1rem;
+padding-left: 0.5rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+main{
     padding: 1rem;
 }
 
 #theme-switch{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     padding: 0;
     border-radius: 50%;
     background-color: var(--background-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 16rem;
 }
-
 #theme-switch svg{
   fill: var(--primary-color)
 }
@@ -61,10 +64,11 @@ main,header {
     display: block;
 }
 
-nav{
-    max-width: var(--mainWidth);
+nav, footer {
     background-color: var(--second-color);
-    margin: auto;
+}
+
+nav{
     display: flex;
 }
 
@@ -78,7 +82,5 @@ nav a:hover{
 }
 
 footer{
-    background-color: var(--second-color);
-    margin: auto;
-    max-width: var(--mainWidth);
+   padding: 0.1rem;
 }

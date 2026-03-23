@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% block main %}
+  
+Work in progress
+
+ <table>          
+        <tr>
+            <th>Title</th>
+            <th>ReleaseYear</th>
+            <th>Genre</th>
+        </tr>
+    {% for item in movies %}
+        <tr> 
+            <td>  {{ item.Title   }}</td> 
+            <td>  {{ item.ReleaseYear }}</td> 
+            <td>  {{ item.Genre   }}</td> 
+        </tr>
+      {% endfor %}
+        </table>
+
+
+{% endblock %}

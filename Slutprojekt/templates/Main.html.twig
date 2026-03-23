@@ -1,16 +1,16 @@
 {% extends "base.html.twig" %}
 {% block main %}
-    <h1>Exempelsida med Twig</h1>
-    <div>
-      Här visas värdet av variabeln {{ namn }}
-    </div>
-
-    <h2>Allt i en lista</h2>
-    <ul>
-    {% for item in exempelLista %}
-      <li>{{ item }}</li>
+  
+<h1>Movies</h1>
+<ul>
+ {% for item in movies %}
+    <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}"><li>{{ item.Title }}</li></a>  
+   
     {% endfor %}
-    </ul>
+  </ul>
+     <h1>Your watchlist</h1>
+     <h3>work in progress, log in to access</h3>
+     
   <a href="{{url("log/login.php")}}">Logga in</a>
 {% endblock %}
  
