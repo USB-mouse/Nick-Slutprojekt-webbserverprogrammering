@@ -10,6 +10,6 @@ $movieResult = $movieStmt->fetchAll();
 $view["movies"] = $movieResult;
 
 
-hello;
+
 
 $twig->display('Main.html.twig', context: $view);
