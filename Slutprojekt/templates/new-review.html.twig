@@ -9,7 +9,8 @@
   
 nytt inlägg
 </h2>
-  <form action="new-review-formhandler.php" method="post">
+
+  <form action="new-review-formhandler.php?MovieId={{MovieId}}"  method="post">
     <input type="hidden" name="MovieId" value="{{ MovieId }}">
     <label for="ReviewTitle">Titel</label><br>
     <input type="text" name="ReviewTitle" id="ReviewTitle" required><br>

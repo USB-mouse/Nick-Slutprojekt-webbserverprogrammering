@@ -6,8 +6,15 @@
  
 
 <h1>review</h1>
-  
-    
+     
+        {% for item in review %}
+      
+       
+        {% endfor %}
+
+ <a href="{{url("new-review.php")}}?MovieId={{ MovieId }}">reviews</a>
+ 
+
         {% for item in review %}
         <div>
           <h3>{{ item.ReviewTitle }} </h2>  
@@ -15,8 +22,6 @@
          <p> {{ item.ReviewContent }} </p>
           <p><i> {{ item.User }} vid {{item.ReviewTime | date("d/m-Y h:i") }} </i></p>
         </div>
-        ID test: {{ item.MovieId }}<div>
-        <a href="{{url("new-review.php")}}?MovieId={{ item.MovieId }}">reviews</a>
       {% else %}
         <div>Finns inga review</div>
    

@@ -105,5 +105,8 @@ tr:nth-child(odd) {
 }
 
 footer{
-   padding: 0.1rem;
+    padding: 0.1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

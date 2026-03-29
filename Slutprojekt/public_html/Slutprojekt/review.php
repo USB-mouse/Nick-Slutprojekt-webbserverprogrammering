@@ -7,6 +7,7 @@ $ReviewStmt -> execute(["MovieId" => $_GET["MovieId"]]);
 $ReviewResult = $ReviewStmt->fetchAll();
 
 $view["review"] = $ReviewResult;
+$view['MovieId'] = $_GET['MovieId'];
 
 // print_r($userResult);
 

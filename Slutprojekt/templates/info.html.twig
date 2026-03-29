@@ -19,7 +19,23 @@ Work in progress
 
         <a href="{{url("review.php")}}?MovieId={{ item.MovieId }}">+reviews</a>
       {% endfor %}
-        </table>
+        </table>¨
+
+
+
+    {% if not username %}  
+      Logga in för att lägga till watchlist 
+     {% endif %}
+    
+     {% if username %}  
+        <form action="watchlist-formhandler.php?MovieId={{MovieId}}"  method="post">
+        <input type="hidden" name="MovieId" value="{{ MovieId }}">
+        <input type="hidden" name="UserId" value="{{ UserId }}">
+        
+    <input type="submit" value="Add to watchlist">
+  </form>
+     {% endif %}
+  
 
 
 

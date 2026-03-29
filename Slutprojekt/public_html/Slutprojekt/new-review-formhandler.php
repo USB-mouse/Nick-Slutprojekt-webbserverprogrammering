@@ -27,7 +27,8 @@ $stmt->execute([
     'MovieId' => $_POST['MovieId']
 ]);
 
-header("Location: new-review.php");
+
+header("Location: review.php?MovieId=" . $_GET['MovieId']);
     exit; 
 
 }

@@ -24,6 +24,7 @@ if (!isset($_POST["username"]) || !isset($_POST["password"]) || $_POST["username
             // Lösenordet är rätt! Användaren loggas in genom att spara användarnamnet i $_SESSION
             session_regenerate_id();
             $_SESSION["username"] = $loginResult["Username"];
+            $_SESSION["UserId"] = $loginResult["UserId"];
             $view["username"] = $loginResult["Username"];
             $messages[] = "Du loggade in som " . $loginResult["Username"];
 

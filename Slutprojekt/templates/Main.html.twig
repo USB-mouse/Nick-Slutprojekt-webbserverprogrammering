@@ -12,10 +12,26 @@
         </tr>
   {% endfor %}
     </table>
+
+
+    
      <h1>Your watchlist</h1>
-     <h3>work in progress, log in to access</h3>
-     
-  <a href="{{url("log/login.php")}}">Logga in</a>
+      {% if username %}  
+    <table>
+        <tr>
+            <th>Movies</th>
+        </tr>
+{% for item in watchlist %}
+        <tr>
+            <td> {{item.Title}}  </td>
+            <td>{{item.DateAdded | date("d/m-Y h:i") }}</td>
+        </tr>
+  {% endfor %}
+    </table>
+     {% endif %}
+    {% if not username %}  
+         <h3>work in progress, log in to access</h3>
+     {% endif %}
 {% endblock %}
  
   
