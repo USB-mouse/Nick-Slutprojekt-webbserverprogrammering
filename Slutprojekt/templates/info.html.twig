@@ -1,6 +1,13 @@
 {% extends "base.html.twig" %}
 {% block main %}
   
+
+{% for item in movies %}
+    <img src="images/{{ item.Cover }}" alt="">
+    {{ item.Summery}}
+{% endfor %}
+
+
 Work in progress
 
  <table>          

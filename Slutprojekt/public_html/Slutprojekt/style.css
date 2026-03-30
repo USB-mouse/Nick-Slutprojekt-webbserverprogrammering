@@ -104,6 +104,10 @@ tr:nth-child(odd) {
     background-color: rgb(228, 221, 226);
 }
 
+img {
+    max-width: 10rem;
+}
+
 footer{
     padding: 0.1rem;
    
