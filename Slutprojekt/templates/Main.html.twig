@@ -1,6 +1,11 @@
 {% extends "base.html.twig" %}
 {% block main %}
-  
+
+<form action="search.php" method="post">
+<input type="text" name="Title" placeholder=" ">
+<button type="submit">Sök</button>
+</form>  
+
 <h1>Movies</h1>
   <table>
         <tr>
@@ -23,8 +28,8 @@
         </tr>
 {% for item in watchlist %}
         <tr>
-            <td> {{item.Title}}  </td>
-            <td>{{item.DateAdded | date("d/m-Y h:i") }}</td>
+             <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
+            <td>{{item.DateAdded }}</td>
         </tr>
   {% endfor %}
     </table>
