@@ -19,12 +19,13 @@ if ($contentLength > 400) {
     }
 
 
-$stmt = $pdo->prepare('INSERT INTO Reviews (ReviewTitle, ReviewContent, MovieId) VALUES (:ReviewTitle, :ReviewContent, :MovieId)');
+$stmt = $pdo->prepare('INSERT INTO Reviews (ReviewTitle, ReviewContent, MovieId, Rating) VALUES (:ReviewTitle, :ReviewContent, :MovieId, :Rating)');
 $stmt->execute([
 
     'ReviewTitle' => $_POST['ReviewTitle'], 
     'ReviewContent' => $_POST ['ReviewContent'],
-    'MovieId' => $_POST['MovieId']
+    'MovieId' => $_POST['MovieId'],
+    'Rating' => $_POST['Rating']
 ]);
 
 

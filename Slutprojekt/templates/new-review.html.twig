@@ -16,6 +16,8 @@ nytt inlägg
     <input type="text" name="ReviewTitle" id="ReviewTitle" required><br>
     <label for="ReviewContent"></label> Skriv ditt inlägg här<br>
     <textarea name="ReviewContent" id="" rows="10" cols="60" id="ReviewContent" required></textarea><br>
+    <label for="Rating">Rating:</label>
+    <input type="number" id="Rating" name="Rating" min="1" max="10" required>
     <input type="submit" value="Skicka in">
   </form>
   {% endblock %}

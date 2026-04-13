@@ -1,29 +1,35 @@
 * {
     box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
 :root {
     --mainWidth: 50rem;
-    --background-color: rgb(236, 236, 236);
+    --background-color:#f3f4f6;
+    --primary-color: white;
     --second-color: #e10531;
     --hovercolor: #ae001a;
-    --primary-color: white;
-    --text-color: black;
+    --border-color: #e5e7eb;
+    --text-color: #1f2937;
+    --table-stripe: #f9fafb;
 }
 
 .darkmode {
-    --background-color: rgb(16, 16, 16);
-    --second-color: #140079;
-    --hovercolor: #140755;
-    --primary-color:  rgb(39, 39, 39);
+    --background-color: #0c1220;
+    --primary-color:  #1c2534;
+    --second-color: #3b82f6;
+    --hovercolor: #200d82;
+    --border-color: #334155;
     --text-color: white;
+    --table-stripe: #1e293b;
 }
 
 body {
     background-color: var(--background-color);
     color: var(--text-color );
     margin: auto;
+    
 }
 
 main, header {
@@ -31,11 +37,10 @@ main, header {
 }
 
 header{
- padding: 0.1rem;
-padding-left: 0.5rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
+    padding: 0rem, 1rem, 0rem, 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 main{
     padding: 1rem;
@@ -70,25 +75,32 @@ nav, footer {
 
 nav{
     display: flex;
+    padding: 0 1rem;
 }
 
 nav a{
     text-decoration: none;
     color: var(--text-color);
-    padding: 0.7rem;
+    padding: 1rem 1.5rem;
 }
 nav a:hover{
     background-color: var(--hovercolor)
 }
 
 table {
+  
     border-spacing: 0;
     border-collapse: collapse;
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 td, th {
     border: solid 1px rgb(53, 53, 53);
     padding: 0.5rem 0.75rem;
-    background-color: var(--primary-color)
+    background-color: var(--primary-color);
+    
 }
 th {
     background-color: var(--second-color);
@@ -97,9 +109,11 @@ th {
 td a {
     color: var(--text-color);
     text-decoration: none;
+    
 }
 td a:hover {
     color: var(--second-color);
+    text-decoration: underline;
 }
 tr:nth-child(odd) {
     background-color: rgb(228, 221, 226);
@@ -111,7 +125,6 @@ img {
 
 footer{
     padding: 0.1rem;
-   
     bottom: 0;
     width: 100%;
 }
