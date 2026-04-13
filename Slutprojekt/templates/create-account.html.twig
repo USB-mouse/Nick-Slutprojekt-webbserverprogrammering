@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block main %}
+  
+
+<main>
+    <h2>Sign in</h2>
+    <form action="create-account-formhandler.php" method="post">
+         
+        <div>
+            <label for="Username">Användarnamn:</label>
+            <input type="text" name="Username" id="Username" required>
+        </div>
+        <div>
+            <label for="Password">Lösenord: </label>
+            <input type="password" name="Password" id="Password" required>
+        </div>
+        <div>
+            <label for="repeated-password">Upprepa lösenordet: </label>
+            <input type="password" name="repeated-password" id="repeated-password" required>
+        </div>
+        <input type="submit" value="Skapa konto">
+    </form>
+
+</main>
+
+{% endblock %}

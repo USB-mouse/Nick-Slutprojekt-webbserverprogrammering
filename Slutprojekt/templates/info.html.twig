@@ -8,7 +8,7 @@
 {% endfor %}
 
 
-Work in progress
+
 
  <table>          
         <tr>
@@ -17,14 +17,14 @@ Work in progress
             <th>Genre</th>
         </tr>
     {% for item in movies %}
-    ID test: {{ item.MovieId }}
+
         <tr> 
             <td>  {{ item.Title   }}</td> 
             <td>  {{ item.ReleaseYear }}</td> 
-            <td>  {{ item.Genre   }}</td> 
-        </tr>
+            <td>  {{ item.Genre}}</td> 
+        </tr>   
 
-        <a href="{{url("review.php")}}?MovieId={{ item.MovieId }}">+reviews</a>
+       <h3> <a href="{{url("review.php")}}?MovieId={{ item.MovieId }}">reviews</a> </h3>
       {% endfor %}
         </table>¨
 
