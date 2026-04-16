@@ -26,8 +26,8 @@ if (empty($_POST["Username"]) || empty($_POST["Password"]) || empty($_POST["User
             $messages[] = "Användarnamnet är upptaget!";
 
         } else {
-            $newTeacherStmt = $pdo->prepare("INSERT INTO Users (Username, Password) VALUES (:Username, :Password)");
-            $newTeacherStmt->execute([
+            $newUserStmt = $pdo->prepare("INSERT INTO Users (Username, Password) VALUES (:Username, :Password)");
+            $newUserStmt->execute([
                 "Username" => $_POST["Username"],
                 "Password" => password_hash(password:$_POST["Password"], algo: PASSWORD_DEFAULT)
             ]);
@@ -39,18 +39,7 @@ if (empty($_POST["Username"]) || empty($_POST["Password"]) || empty($_POST["User
     }
 
 }
+$view["messages"] = $messages;
+$twig->display('create-account.html.twig', context: $view );
 
 
-require($includeDir . "/header.php");
-?>
-
-<main>
-
-    <h2>Nytt konto</h2>
-    <?php foreach ($messages as $key => $value): ?>
-        <div><?= $value ?></div>
-    <?php endforeach; ?>
-
-</main>
-
-<?php require($includeDir . "/footer.php"); ?>

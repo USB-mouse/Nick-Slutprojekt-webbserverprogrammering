@@ -21,6 +21,10 @@
         <input type="submit" value="Skapa konto">
     </form>
 
+{% for item in messages %}
+    <p>{{item}}</p>
+  {% endfor %}
+
 </main>
 
 {% endblock %}

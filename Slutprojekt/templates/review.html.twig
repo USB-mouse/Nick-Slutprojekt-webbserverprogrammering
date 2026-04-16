@@ -2,9 +2,12 @@
 
 
 {% block main %}
-   
- 
-
+<button onclick="history.back()" class="back-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <rect width="24" height="24" fill="none"/>
+        <path fill="currentColor" d="M22 13v-2H5.828l3.95-3.95l-1.414-1.414L2 12l6.364 6.364l1.414-1.414L5.828 13z"/>
+    </svg>
+</button>
 <h1>review</h1>
 
  <p>Write a <a href="{{url("new-review.php")}}?MovieId={{ MovieId }}">review</a></p>

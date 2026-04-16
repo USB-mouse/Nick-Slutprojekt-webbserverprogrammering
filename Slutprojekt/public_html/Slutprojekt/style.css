@@ -128,3 +128,14 @@ footer{
     bottom: 0;
     width: 100%;
 }
+.back-button {
+    background: none;     
+    border: none;          
+    padding: 0;            
+    cursor: pointer;       
+ 
+}
+.back-button:hover {
+    transform: scale(1.1); 
+    transition: 0.2s ease; 
+}
