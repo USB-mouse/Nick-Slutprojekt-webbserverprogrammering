@@ -12,7 +12,7 @@ $watchlistResult = $watchlistStmt->fetchAll();
 $view["watchlist"] = $watchlistResult;
 
 
-
+h
 
 $view["movies"] = $movieResult;
 
