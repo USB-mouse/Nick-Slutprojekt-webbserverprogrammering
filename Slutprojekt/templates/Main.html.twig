@@ -2,6 +2,25 @@
 {% block main %}
 
 
+<h1>Newest additons</h1>
+<button onclick="$POST_(information)" > yo</button>
+
+    
+</form>
+
+<table>
+        <tr>
+            <th>Newest additons</th>
+        </tr>
+{% for item in movies %}
+        <tr>
+            <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
+        </tr>
+  {% endfor %}
+    </table>
+<h1>Best scores</h1>
+
+<h1>Most reviews</h1>
 
 <h1>Movies</h1>
   <table>
