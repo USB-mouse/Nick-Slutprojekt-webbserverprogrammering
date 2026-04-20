@@ -12,7 +12,7 @@ $watchlistStmt -> execute([
 ]);
 $watchlistResult = $watchlistStmt->fetchAll();
 
-
+v
 
 $view["watchlist"] = $watchlistResult;
 
