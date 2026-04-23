@@ -13,7 +13,7 @@ $movieStmt = "SELECT * FROM MOVIES";
 
 
 
-    
+    h
 
 $userId = $_SESSION['UserId'];
 
