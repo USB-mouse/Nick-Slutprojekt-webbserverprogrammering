@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+{% block main %}
+    
+  <a href="Allmovies.php?sort=newest">Senast tillagda</a>
+    <a href="Allmovies.php?sort=al">A-Ö</a>
+    <a href="Allmovies.php">standard</a>
+
+<table>
+        <tr>
+            <th>Movies</th>
+        </tr>
+{% for item in movies %}
+        <tr>
+            <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
+        </tr>
+  {% endfor %}
+    </table>
+
+{% endblock %}
