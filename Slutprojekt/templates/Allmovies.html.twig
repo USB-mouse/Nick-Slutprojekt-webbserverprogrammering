@@ -1,10 +1,17 @@
 {% extends "base.html.twig" %}
 {% block main %}
     
-  <a href="Allmovies.php?sort=newest">Senast tillagda</a>
-    <a href="Allmovies.php?sort=al">A-Ö</a>
-    <a href="Allmovies.php">standard</a>
-
+  <a href="Allmovies.php?sort=newest&genre={{ genre }}">Senast tillagda</a>
+    <a href="Allmovies.php?sort=al&genre={{ genre }}">A-Ö</a>
+    <a href="Allmovies.php?genre={{ genre }}">standard</a>
+<br>
+     <a href="Allmovies.php?genre=Action&sort={{ sort }}">Action</a>
+     <a href="Allmovies.php?genre=Comedy&sort={{ sort }}">Comedy</a>
+     <a href="Allmovies.php?genre=Drama&sort={{ sort }}">Drama</a>
+     <a href="Allmovies.php?genre=Family&sort={{ sort }}">Family</a>
+     <a href="Allmovies.php?sort={{ sort }}">standard</a>
+<br>
+   <a href="Allmovies.php">full standard</a>
 <table>
         <tr>
             <th>Movies</th>

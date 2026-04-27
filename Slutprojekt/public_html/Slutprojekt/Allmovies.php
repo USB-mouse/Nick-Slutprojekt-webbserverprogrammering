@@ -2,7 +2,7 @@
 require_once('../../Slutprojekt-app.php');
 //grunden av att hämta 
 $sql = "SELECT * FROM Movies";
-$params = [];
+$execute = [];
 //vi ska kunna se om man har tryckt på en filter 
 $sort = $_GET['sort'] ?? '';
 $genre = $_GET['genre'] ?? '';
@@ -20,11 +20,14 @@ if ($sort === 'newest') {
 }
 
 
-f
+
 $movieStmt = $pdo->prepare($sql);
 $movieStmt -> execute($execute);
 $movieResult = $movieStmt->fetchAll();
 
 $view['movies'] = $movieResult;
+
+$view['sort'] = $sort;
+$view['genre'] = $genre;
 
 $twig->display('Allmovies.html.twig', context: $view);
