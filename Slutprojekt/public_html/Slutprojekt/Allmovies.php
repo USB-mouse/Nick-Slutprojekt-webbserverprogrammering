@@ -20,7 +20,7 @@ if ($sort === 'newest') {
 }
 
 
-
+f
 $movieStmt = $pdo->prepare($sql);
 $movieStmt -> execute($execute);
 $movieResult = $movieStmt->fetchAll();
