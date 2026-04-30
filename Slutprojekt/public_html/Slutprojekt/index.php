@@ -16,7 +16,7 @@ $movieStmt = $pdo->prepare($sql);
 $movieStmt -> execute();
 $movieResult = $movieStmt->fetchAll();
 
-
+g
 $view['movies'] = $movieResult;
     
 
