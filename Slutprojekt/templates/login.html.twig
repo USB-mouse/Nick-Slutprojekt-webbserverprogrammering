@@ -15,5 +15,7 @@
   {% for item in messages %}
     <p>{{item}}</p>
   {% endfor %}
+
+  <p>Har du inte konto? <a href="{{url("login/create-account.php")}}">Sign in</a></p>
 {% endblock %}
 

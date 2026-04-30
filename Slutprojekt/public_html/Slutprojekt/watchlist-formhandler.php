@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $movieId = $_POST['MovieId'] ?? null;
     $userId = $_POST['UserId'] ?? null;
-    $dateAdded = date("d/m-Y h:i"); 
+    $dateAdded = date('Y-m-d H:i:s'); 
 
   
     if (!empty($movieId) && !empty($userId)) {

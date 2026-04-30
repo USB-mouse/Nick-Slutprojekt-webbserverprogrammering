@@ -2,7 +2,7 @@
 require_once('../../Slutprojekt-app.php');
 
 
-$ReviewStmt = $pdo->prepare("SELECT * FROM Reviews WHERE MovieId = :MovieId");
+$ReviewStmt = $pdo->prepare("SELECT * FROM Reviews WHERE MovieId = :MovieId ORDER BY ReviewTime ASC");
 $ReviewStmt -> execute(["MovieId" => $_GET["MovieId"]]);
 $ReviewResult = $ReviewStmt->fetchAll();
 

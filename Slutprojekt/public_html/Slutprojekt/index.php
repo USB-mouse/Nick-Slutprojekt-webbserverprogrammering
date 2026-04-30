@@ -1,13 +1,36 @@
 <?php
 require_once('../../Slutprojekt-app.php');
+
+
+// Fasta listor som inte kräver någon ändring
+/*
+$topRatedStmt = $pdo->prepare("SELECT * FROM Movies ORDER BY Rating DESC LIMIT 3");
+$topRatedStmt->execute();
+$topRatedMovies = $topRatedStmt->fetchAll();
+*/
+$classicsStmt = $pdo->prepare("SELECT * FROM Movies ORDER BY ReleaseYear ASC LIMIT 3");
+$classicsStmt->execute();
+$classicMovies = $classicsStmt->fetchAll();
+
+$newestStmt = $pdo->prepare("SELECT * FROM Movies ORDER BY MovieDateAdded DESC");
+$newestStmt->execute();
+$newestMovies = $newestStmt->fetchAll();
+
+
+$view['top_rated'] = $topRatedMovies;
+$view['classics'] = $classicMovies;
+$view['newest'] = $newestMovies;
+
+// variande lista 
+
 //grunden av att hämta 
 $sql = "SELECT * FROM Movies";
 //vi ska kunna se om man har tryckt på en filter 
 $sort = $_GET['sort'] ?? '';
-
+$type = $_GET['genre'] ?? '';
 
 if ($sort === 'newest') {
-    $sql .= " ORDER BY DateAdded DESC";
+    $sql .= " ORDER BY MovieDateAdded DESC";
 } elseif ($sort === 'al') {
     $sql .= " ORDER BY Title ASC";
 }
@@ -16,9 +39,7 @@ $movieStmt = $pdo->prepare($sql);
 $movieStmt -> execute();
 $movieResult = $movieStmt->fetchAll();
 
-g
-$view['movies'] = $movieResult;
-    
+$view['movies'] = $movieResult;    
 
 $userId = $_SESSION['UserId'] ?? '';
 
@@ -31,7 +52,6 @@ $watchlistResult = $watchlistStmt->fetchAll();
 
 $view["watchlist"] = $watchlistResult;
 
-$view["movies"] = $movieResult;
 
 
 $twig->display('Main.html.twig', context: $view);

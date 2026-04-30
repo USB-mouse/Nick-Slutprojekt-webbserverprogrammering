@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Movie{% endblock %}</title>
     <link rel="stylesheet" href="{{url("style.css")}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script type="text/javascript" src="darkmode.js" defer></script>
     {% endblock %}
   </head>
 <body>
 
   <header>
-   <h1>Jane Juliet</h1>
+    <h1><a href="{{url("index.php")}}">Jane Juliet</a></h1>
+   
     
 
    {% if username %}
@@ -38,8 +42,7 @@
   <a href="{{url("login/logout.php")}}">Logga out</a>
   {% endif %}
 
-  <a href="{{url("login/create-account.php")}}">Sign in</a>
-
+  <a href="{{url("watchlist.php")}}">Watchlist</a>
   
   
 </nav>

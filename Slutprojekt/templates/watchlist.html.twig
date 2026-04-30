@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+  
+      {% if username %}  
+
+ <h1>Your watchlist</h1>
+    <table>
+        <tr>
+            <th>Movies</th>
+        </tr>
+{% for item in watchlist %}
+        <tr>
+             <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
+            <td>{{item.DateAdded }}</td>
+        </tr>
+  {% endfor %}
+    </table>
+     {% endif %}
+    {% if not username %}  
+         <h1>Log in to access your watchlist</h1>
+     {% endif %}
+
+
+{% endblock %}

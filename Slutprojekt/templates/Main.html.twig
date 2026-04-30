@@ -2,25 +2,22 @@
 {% block main %}
 
 
-<h1>Newest additons</h1>
-<button onclick="$POST_(information)" > yo</button>
 
 
     <a href="movies.php?sort=newest">Senast tillagda</a>
     <a href="movies.php?sort=al">A-Ö</a>
     <a href="movies.php">Visa alla (standard)</a>
-
-
-    
-</form>
-
+ <h2>Upptäck filmer</h2>
+    <h1>Newest additons</h1>
+   
 <table>
         <tr>
             <th>Newest additons</th>
         </tr>
-{% for item in movies %}
+{% for item in newest %}
         <tr>
             <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
+              <td>{{item.MovieDateAdded }}</td>
         </tr>
   {% endfor %}
     </table>
@@ -53,7 +50,7 @@
 {% for item in watchlist %}
         <tr>
              <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
-            <td>{{item.DateAdded }}</td>
+            <td>{{item.DateAdded | date("d/m-Y H:i") }}</td>
         </tr>
   {% endfor %}
     </table>
@@ -61,6 +58,12 @@
     {% if not username %}  
          <h3>Log in to access</h3>
      {% endif %}
+
+
+
+
+
+
 {% endblock %}
  
   

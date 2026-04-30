@@ -3,11 +3,8 @@
 
 {% block main %}
 <h2>
-      {% for item in review %}
-    ID test: {{ item.MovieId }}
-        {% endfor %}
   
-nytt inlägg
+new-review
 </h2>
 
   <form action="new-review-formhandler.php?MovieId={{MovieId}}"  method="post">
