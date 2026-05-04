@@ -1,41 +1,39 @@
 {% extends "base.html.twig" %}
 {% block main %}
 
-
-
-
-    <a href="movies.php?sort=newest">Senast tillagda</a>
-    <a href="movies.php?sort=al">A-Ö</a>
-    <a href="movies.php">Visa alla (standard)</a>
  <h2>Upptäck filmer</h2>
-    <h1>Newest additons</h1>
-   
+  
+<div class="Movieboxes">
 <table>
         <tr>
             <th>Newest additons</th>
+            <th>Date Added</th>
         </tr>
 {% for item in newest %}
         <tr>
             <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
-              <td>{{item.MovieDateAdded }}</td>
+              <td>{{item.MovieDateAdded | date("d/m-Y")}}</td>
         </tr>
   {% endfor %}
     </table>
-<h1>Best scores</h1>
 
-<h1>Most reviews</h1>
-
-<h1>Movies</h1>
-  <table>
+<table>
         <tr>
-            <th>Movies</th>
+            <th>Classics</th>
+            <th>ReleaseYear</th>
         </tr>
-{% for item in movies %}
+        
+            
+        
+{% for item in classics %}
         <tr>
             <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
+                    <td>{{item.ReleaseYear }}</td>  
         </tr>
+     
   {% endfor %}
     </table>
+</div>
 
 
     

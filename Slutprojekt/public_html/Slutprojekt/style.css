@@ -97,6 +97,13 @@ nav a:hover{
     background-color: var(--hovercolor)
 }
 
+.MovieBoxes {
+    display: flex;
+   gap: 2rem;
+   flex-wrap: wrap;
+}
+
+
 table {
   
     border-spacing: 0;

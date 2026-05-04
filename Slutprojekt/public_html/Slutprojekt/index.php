@@ -8,15 +8,17 @@ $topRatedStmt = $pdo->prepare("SELECT * FROM Movies ORDER BY Rating DESC LIMIT 3
 $topRatedStmt->execute();
 $topRatedMovies = $topRatedStmt->fetchAll();
 */
+
+$newestStmt = $pdo->prepare("SELECT * FROM Movies ORDER BY MovieDateAdded DESC LIMIT 3");
+$newestStmt->execute();
+$newestMovies = $newestStmt->fetchAll();
+
+
 $classicsStmt = $pdo->prepare("SELECT * FROM Movies ORDER BY ReleaseYear ASC LIMIT 3");
 $classicsStmt->execute();
 $classicMovies = $classicsStmt->fetchAll();
 
-$newestStmt = $pdo->prepare("SELECT * FROM Movies ORDER BY MovieDateAdded DESC");
-$newestStmt->execute();
-$newestMovies = $newestStmt->fetchAll();
 
-v
 $view['top_rated'] = $topRatedMovies;
 $view['classics'] = $classicMovies;
 $view['newest'] = $newestMovies;
@@ -43,7 +45,7 @@ $view['movies'] = $movieResult;
 
 $userId = $_SESSION['UserId'] ?? '';
 
-$watchlistStmt = $pdo->prepare("SELECT * FROM WATCHLIST JOIN Movies on Watchlist.MovieId = Movies.MovieId WHERE Watchlist.UserId = :UserId ORDER BY DateAdded DESC");
+$watchlistStmt = $pdo->prepare("SELECT * FROM WATCHLIST JOIN Movies on Watchlist.MovieId = Movies.MovieId WHERE Watchlist.UserId = :UserId ORDER BY DateAdded DESC LIMIT 4");
 $watchlistStmt -> execute([
     'UserId' => $userId
 ]);

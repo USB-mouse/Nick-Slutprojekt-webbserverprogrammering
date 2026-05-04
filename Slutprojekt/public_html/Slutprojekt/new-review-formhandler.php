@@ -1,9 +1,11 @@
 <?php
-
+date_default_timezone_set('Europe/Stockholm');
 require_once('../../Slutprojekt-app.php');
 
 $messages = array();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+ $ReviewTime = date('Y-m-d H:i:s'); 
 // Har formuläret fyllts i?
 if (empty($_POST["ReviewTitle"]) || empty($_POST["ReviewContent"]) || $_POST["ReviewTitle"]) {
     $messages[] = "Formuläret är inte korrekt ifyllt!";
@@ -19,13 +21,14 @@ if ($contentLength > 400) {
     }
 
 
-$stmt = $pdo->prepare('INSERT INTO Reviews (ReviewTitle, ReviewContent, MovieId, Rating) VALUES (:ReviewTitle, :ReviewContent, :MovieId, :Rating)');
+$stmt = $pdo->prepare('INSERT INTO Reviews (ReviewTitle, ReviewContent, MovieId, Rating, ReviewTime) VALUES (:ReviewTitle, :ReviewContent, :MovieId, :Rating, :ReviewTime)');
 $stmt->execute([
 
     'ReviewTitle' => $_POST['ReviewTitle'], 
     'ReviewContent' => $_POST ['ReviewContent'],
     'MovieId' => $_POST['MovieId'],
-    'Rating' => $_POST['Rating']
+    'Rating' => $_POST['Rating'],
+    'ReviewTime' => $_POST['ReviewTime']
 ]);
 
 
