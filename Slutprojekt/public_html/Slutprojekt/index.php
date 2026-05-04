@@ -16,7 +16,7 @@ $newestStmt = $pdo->prepare("SELECT * FROM Movies ORDER BY MovieDateAdded DESC")
 $newestStmt->execute();
 $newestMovies = $newestStmt->fetchAll();
 
-
+v
 $view['top_rated'] = $topRatedMovies;
 $view['classics'] = $classicMovies;
 $view['newest'] = $newestMovies;
