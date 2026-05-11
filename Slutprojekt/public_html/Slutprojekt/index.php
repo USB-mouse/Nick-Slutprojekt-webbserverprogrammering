@@ -44,7 +44,7 @@ $movieResult = $movieStmt->fetchAll();
 $view['movies'] = $movieResult;    
 
 $userId = $_SESSION['UserId'] ?? '';
-b
+
 $watchlistStmt = $pdo->prepare("SELECT * FROM WATCHLIST JOIN Movies on Watchlist.MovieId = Movies.MovieId WHERE Watchlist.UserId = :UserId ORDER BY DateAdded DESC LIMIT 4");
 $watchlistStmt -> execute([
     'UserId' => $userId

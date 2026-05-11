@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
  $ReviewTime = date('Y-m-d H:i:s'); 
 // Har formuläret fyllts i?
-if (empty($_POST["ReviewTitle"]) || empty($_POST["ReviewContent"]) || $_POST["ReviewTitle"]) {
+if (empty($_POST["ReviewTitle"]) || empty($_POST["ReviewContent"])) {
     $messages[] = "Formuläret är inte korrekt ifyllt!";
 } 
 $titleLength = strlen($_POST['ReviewTitle']);
@@ -28,7 +28,7 @@ $stmt->execute([
     'ReviewContent' => $_POST ['ReviewContent'],
     'MovieId' => $_POST['MovieId'],
     'Rating' => $_POST['Rating'],
-    'ReviewTime' => $_POST['ReviewTime']
+    'ReviewTime' => $ReviewTime
 ]);
 
 

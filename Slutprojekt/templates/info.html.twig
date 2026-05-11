@@ -1,6 +1,8 @@
 {% extends "base.html.twig" %}
 {% block main %}
 
+
+
 <button onclick="history.back()" class="back-button">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <rect width="24" height="24" fill="none"/>
@@ -9,11 +11,15 @@
 </button>
 
 {% for item in movies %}
-    <img src="images/{{ item.Cover }}" alt="">
-    <br>
-    {{ item.Summery}}
-{% endfor %}
+      <div class="movie-poster">
+            <img src="images/{{ item.Cover }}" alt="{{ item.Title }}">
+            
+    <h3 class="action"> <a href="{{url("review.php")}}?MovieId={{ item.MovieId }}" class="review-button">reviews</a> </h3>
+            
+    
 
+
+{% endfor %}
 
  <table>          
         <tr>
@@ -22,33 +28,33 @@
             <th>Genre</th>
         </tr>
     {% for item in movies %}
-
         <tr> 
-            <td>  {{ item.Title   }}</td> 
+            <td>  {{ item.Title}}</td> 
             <td>  {{ item.ReleaseYear }}</td> 
             <td>  {{ item.Genre}}</td> 
         </tr>   
-
-       <h3> <a href="{{url("review.php")}}?MovieId={{ item.MovieId }}">reviews</a> </h3>
+   
       {% endfor %}
         </table>¨
-
-
-
+//
     {% if not username %}  
       Logga in för att lägga till watchlist 
      {% endif %}
     
      {% if username %}  
-        <form action="watchlist-formhandler.php?MovieId={{MovieId}}"  method="post">
+        <form action="watchlist-formhandler.php?MovieId={{MovieId}}" class="watchlist-button"  method="post">
         <input type="hidden" name="MovieId" value="{{ MovieId }}">
         <input type="hidden" name="UserId" value="{{ UserId }}">
-        
-    <input type="submit" value="Add to watchlist">
+        <input type="submit" value="Add to watchlist">
   </form>
+  //
      {% endif %}
-  
-
-
 
 {% endblock %}
+
+
+
+    
+            
+          
+    
