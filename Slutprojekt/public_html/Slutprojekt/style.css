@@ -2,8 +2,8 @@
     box-sizing: border-box;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: "Inter", sans-serif;
+    color: var(--text-color);
 }
-
 
 :root {
     --mainWidth: 50rem;
@@ -28,14 +28,11 @@
 
 body {
     background-color: var(--background-color);
-    color: var(--text-color );
     margin: auto;
-    
 }
 
 h1 a {
     text-decoration: none;
-    color: black;
 }
 h1 a:hover {
     color: var(--second-color);
@@ -90,7 +87,6 @@ nav{
 
 nav a{
     text-decoration: none;
-    color: var(--text-color);
     padding: 1rem 1.5rem;
 }
 nav a:hover{
@@ -124,7 +120,6 @@ th {
     color: white;
 }
 td a {
-    color: var(--text-color);
     text-decoration: none;
     
 }
@@ -158,11 +153,22 @@ footer{
     transition: 0.2s ease; 
 }
 
+.MainInfo {
+  display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    
+}
+
+
 .movie-poster img {
     width: 250px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     transition: 0.3s;
+  
+   
 }
 
 .action {
@@ -178,7 +184,6 @@ footer{
     border: none;
     transition: 0.2s;
      background-color: transparent;
-    color: var(--text-color);
     border: 1px solid #000000;
 }
 .review-button:hover { 
@@ -186,6 +191,12 @@ footer{
     color: var(--hovercolor);
 }
 
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    }
 
 
 

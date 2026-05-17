@@ -1,25 +1,22 @@
 {% extends "base.html.twig" %}
 {% block main %}
 
-
-
-<button onclick="history.back()" class="back-button">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <rect width="24" height="24" fill="none"/>
-        <path fill="currentColor" d="M22 13v-2H5.828l3.95-3.95l-1.414-1.414L2 12l6.364 6.364l1.414-1.414L5.828 13z"/>
-    </svg>
-</button>
-
+<div class="MainInfo">
 {% for item in movies %}
       <div class="movie-poster">
             <img src="images/{{ item.Cover }}" alt="{{ item.Title }}">
+            </div>
+  
             
-    <h3 class="action"> <a href="{{url("review.php")}}?MovieId={{ item.MovieId }}" class="review-button">reviews</a> </h3>
-            
-    
-
 
 {% endfor %}
+{% for item in movies %}
+
+
+            
+
+{% endfor %}
+ <div>
 
  <table>          
         <tr>
@@ -28,15 +25,25 @@
             <th>Genre</th>
         </tr>
     {% for item in movies %}
+<div class="summery">
+<h4> Summery</h4>
+{{ item.Summery}}
+</div>
         <tr> 
             <td>  {{ item.Title}}</td> 
             <td>  {{ item.ReleaseYear }}</td> 
-            <td>  {{ item.Genre}}</td> 
+            <td> <a href="{{url("Allmovies.php")}}?genre={{ item.Genre}}"> {{ item.Genre}}</a></td>
         </tr>   
-   
+       
       {% endfor %}
-        </table>¨
-//
+        </table>
+        </div>
+</div>
+
+
+       <h3 class="action"> <a href="{{url("review.php")}}?MovieId={{ item.MovieId }}" class="review-button">reviews</a> </h3>
+
+
     {% if not username %}  
       Logga in för att lägga till watchlist 
      {% endif %}
@@ -47,9 +54,9 @@
         <input type="hidden" name="UserId" value="{{ UserId }}">
         <input type="submit" value="Add to watchlist">
   </form>
-  //
-     {% endif %}
 
+     {% endif %}
+ <h4 class="info">Liknade filmer</h4>
 {% endblock %}
 
 

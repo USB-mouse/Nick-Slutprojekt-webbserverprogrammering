@@ -15,7 +15,7 @@
         {% for item in review %}
         <div>
           <h3>{{ item.ReviewTitle }} </h2>  
-           <p> utav  {{ item.Rating }}/10 </p>
+           <p> ⭐ {{ item.Rating }}/10 </p>
          <p> {{ item.ReviewContent }} </p>
           <p><i> {{ item.User }} vid {{item.ReviewTime | date("d/m-Y h:i") }} </i></p>
         </div>
