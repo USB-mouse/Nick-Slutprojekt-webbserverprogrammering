@@ -10,12 +10,33 @@
             
 
 {% endfor %}
-{% for item in movies %}
+{% for item in genre %}
+ <table>          
+        <tr>
+            <th>Title</th>
+            <th>ReleaseYear</th>
+            <th>Genre</th>
+        </tr>
+    {% for item in movies %}
+<div class="summery">
+<h4> Summery</h4>
+{{ item.Summery}}
+</div>
+        <tr> 
+            <td>  {{ item.Title}}</td> 
+            <td>  {{ item.ReleaseYear }}</td> 
+            <td> <a href="{{url("Allmovies.php")}}?genre={{ item.Genre}}"> {{ item.Genre}}</a></td>
+            <td>{{ item.Director }}</td>
+        </tr>   
+       
+      {% endfor %}
+        </table>
 
-
-            
+    
 
 {% endfor %}
+
+
  <div>
 
  <table>          

@@ -36,7 +36,7 @@ if ($sort === 'newest') {
 } elseif ($sort === 'al') {
     $sql .= " ORDER BY Title ASC";
 }
-l
+
 
 $movieStmt = $pdo->prepare($sql);
 $movieStmt -> execute();
