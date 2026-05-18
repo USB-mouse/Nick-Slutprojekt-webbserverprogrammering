@@ -1,32 +1,25 @@
 <?php
 require_once('../../Slutprojekt-app.php');
 
-$genre = $_SESSION["genre"];
+
 
 $movieStmt = $pdo->prepare("SELECT * FROM MOVIES WHERE MovieId = :MovieId");
 $movieStmt -> execute(["MovieId" => $_GET["MovieId"]]);
 $movieResult = $movieStmt->fetchAll();
 
-$LkStmt = $pdo->prepare("SELECT * FROM MOVIES WHERE Genre = :genre");
-$LkStmt -> execute(['genre' => $_SESSION['genre']]);
-$LkResult = $LkStmt->fetchAll();
 
-
-
-$LkStmt = $pdo->prepare("SELECT * FROM Movies WHERE Genre = :genre AND MovieId != :MovieId LIMIT 5");
+$LkStmt = $pdo->prepare("SELECT * FROM Movies WHERE Genre = :genre AND MovieId != :MovieId LIMIT 3");
 $LkStmt->execute([
-    'genre'   => $movieResult['Genre'],
-    'MovieId' => $_GET['MovieId'] ?? null
+    'genre'   => $_GET["genre"],
+    'MovieId' => $_GET['MovieId']
 ]);
 
 $LkResult = $LkStmt->fetchAll();
 
-$view['genre']= $movieResult['Genre'];
+$view["Lkmovies"] = $LkResult;
     
 
-
-
-$view['genre'] = $LkResult;
+$view['genre'] = $_GET['genre'];
 $_SESSION['UserId'] ?? null;
 
 $view["movies"] = $movieResult;

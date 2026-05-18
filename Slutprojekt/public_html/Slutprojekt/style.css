@@ -191,12 +191,54 @@ footer{
     color: var(--hovercolor);
 }
 
-.info {
+.LiknadeFilmer{
     display: flex;
-    justify-content: center;
     align-items: flex-start;
-
+    flex-direction: column;
     }
+.tableandsummery {
+    padding: 1rem;
+}
+
+.watchlist-button {
+    margin: 0; 
+}
+.watchlist-button input[type="submit"] {
+    background-color: var(--second-color); 
+    color:white;
+    border: none; 
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 6px; 
+    cursor: pointer; 
+}
+.watchlist-button input[type="submit"]:hover {
+    background-color: var(--hovercolor);
+}
+
+.review {
+    border-style: dashed;
+    max-width: 50rem;
+    padding: 8px;
+    margin-bottom: 1rem;
+}
 
 
+.remove-watchlistform {
+    display: inline-block;
+    margin: 0;
+}
 
+.watchlistbtn-remove {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+
+.watchlistbtn-remove:hover {
+    color: var(--second-color, #e10531);
+    border-color: var(--second-color, #e10531);
+}

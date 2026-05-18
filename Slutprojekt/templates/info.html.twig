@@ -1,6 +1,13 @@
 {% extends "base.html.twig" %}
 {% block main %}
 
+
+
+{% for item in movies %}
+  <h1> {{item.Title}} </h1> 
+{% endfor %}
+
+
 <div class="MainInfo">
 {% for item in movies %}
       <div class="movie-poster">
@@ -10,12 +17,14 @@
             
 
 {% endfor %}
-{% for item in genre %}
+
+ <div class="tableandsummery">
+
  <table>          
         <tr>
-            <th>Title</th>
             <th>ReleaseYear</th>
             <th>Genre</th>
+            <th>Director</th>
         </tr>
     {% for item in movies %}
 <div class="summery">
@@ -23,37 +32,9 @@
 {{ item.Summery}}
 </div>
         <tr> 
-            <td>  {{ item.Title}}</td> 
             <td>  {{ item.ReleaseYear }}</td> 
             <td> <a href="{{url("Allmovies.php")}}?genre={{ item.Genre}}"> {{ item.Genre}}</a></td>
-            <td>{{ item.Director }}</td>
-        </tr>   
-       
-      {% endfor %}
-        </table>
-
-    
-
-{% endfor %}
-
-
- <div>
-
- <table>          
-        <tr>
-            <th>Title</th>
-            <th>ReleaseYear</th>
-            <th>Genre</th>
-        </tr>
-    {% for item in movies %}
-<div class="summery">
-<h4> Summery</h4>
-{{ item.Summery}}
-</div>
-        <tr> 
-            <td>  {{ item.Title}}</td> 
-            <td>  {{ item.ReleaseYear }}</td> 
-            <td> <a href="{{url("Allmovies.php")}}?genre={{ item.Genre}}"> {{ item.Genre}}</a></td>
+            <td>    {{item.Director}}</td>
         </tr>   
        
       {% endfor %}
@@ -62,7 +43,7 @@
 </div>
 
 
-       <h3 class="action"> <a href="{{url("review.php")}}?MovieId={{ item.MovieId }}" class="review-button">reviews</a> </h3>
+       <h3 class="action"> <a href="{{url("review/review.php")}}?MovieId={{ MovieId }}" class="review-button">reviews</a> </h3>
 
 
     {% if not username %}  
@@ -70,14 +51,37 @@
      {% endif %}
     
      {% if username %}  
-        <form action="watchlist-formhandler.php?MovieId={{MovieId}}" class="watchlist-button"  method="post">
+        <form action="watchlist/watchlist-formhandler.php?MovieId={{MovieId}}" class="watchlist-button"  method="post">
         <input type="hidden" name="MovieId" value="{{ MovieId }}">
         <input type="hidden" name="UserId" value="{{ UserId }}">
+         <input type="hidden" name="genre" value="{{ genre }}">
         <input type="submit" value="Add to watchlist">
   </form>
 
      {% endif %}
- <h4 class="info">Liknade filmer</h4>
+
+     <div class="LiknadeFilmer">
+<h4>Liknade filmer</h4>
+<table>          
+        <tr>
+            <th>Title</th>
+            <th>ReleaseYear</th>
+            <th>Genre</th>
+        </tr>
+    {% for item in Lkmovies %}
+
+
+</div>
+        <tr> 
+            <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}&genre={{item.Genre}}">{{ item.Title }}</a></td>
+            <td>  {{ item.ReleaseYear }}</td> 
+            <td> <a href="{{url("Allmovies.php")}}?genre={{ item.Genre}}"> {{ item.Genre}}</a></td>
+        </tr>   
+       
+      {% endfor %}
+        </table>
+     </div>
+ 
 {% endblock %}
 
 

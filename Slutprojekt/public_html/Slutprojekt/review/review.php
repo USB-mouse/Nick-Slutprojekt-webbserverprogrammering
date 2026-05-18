@@ -1,5 +1,5 @@
 <?php
-require_once('../../Slutprojekt-app.php');
+require_once('../../../Slutprojekt-app.php');
 
 
 $ReviewStmt = $pdo->prepare("SELECT * FROM Reviews WHERE MovieId = :MovieId ORDER BY ReviewTime ASC");
@@ -11,4 +11,4 @@ $view['MovieId'] = $_GET['MovieId'];
 
 // print_r($userResult);
 
-$twig->display('review.html.twig', context: $view );
+$twig->display('review/review.html.twig', context: $view );

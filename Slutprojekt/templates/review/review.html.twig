@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+
+{% block main %}
+
+<h1>review</h1>
+{% if username %}  
+        <p>Write a <a href="{{url("review/new-review.php")}}?MovieId={{ MovieId }}">review</a></p>
+     {% endif %}
+
+   {% if not username %}  
+         <h3>Log in to write a review</h3>
+     {% endif %}
+
+  {% for item in review %}
+    <div class="review">
+      <h3>{{ item.ReviewTitle }} </h2>  
+       <p> ⭐ {{ item.Rating }}/10 </p>
+       <p> {{ item.ReviewContent }} </p>
+       <p><i> {{ item.User }} vid {{item.ReviewTime | date("d/m-Y h:i") }} </i></p>
+     </div>
+  {% else %}
+        <div>Finns inga review</div>
+   
+        {% endfor %}
+</div>
+    
+  {% endblock %}

@@ -7,4 +7,4 @@ unset($view["username"]);
 
 
 
-$twig->display('logout.html.twig', context: $view );
+$twig->display('login/logout.html.twig', context: $view );

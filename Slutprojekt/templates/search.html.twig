@@ -5,7 +5,7 @@
  <table>
 {% for item in movies %}
         <tr>
-            <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}">{{ item.Title }}</a></td>
+          <td> <a href="{{url("info.php")}}?MovieId={{ item.MovieId }}&genre={{item.Genre}}">{{ item.Title }}</a></td>
         </tr>
   {% endfor %}
     </table>

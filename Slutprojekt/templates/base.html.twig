@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="darkmode.js" defer></script>
-    {% endblock %}
+    <script type="text/javascript" src="{{url("darkmode.js")}}" defer></script>
+    {% endblock %}  
   </head>
 <body>
 
@@ -42,7 +42,7 @@
   <a href="{{url("login/logout.php")}}">Logga out</a>
   {% endif %}
 
-  <a href="{{url("watchlist.php")}}">Watchlist</a>
+  <a href="{{url("watchlist/watchlist.php")}}">Watchlist</a>
   
   
 </nav>

@@ -1,19 +1,16 @@
 <?php
-require_once('../../Slutprojekt-app.php');
+require_once('../../../Slutprojekt-app.php');
 
 date_default_timezone_set('Europe/Stockholm');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
-    
-
     $movieId = $_POST['MovieId'] ?? null;
     $userId = $_POST['UserId'] ?? null;
     $dateAdded = date('Y-m-d H:i:s'); 
-
+    $genre = $_POST['genre'] ?? null;
   
     if (!empty($movieId) && !empty($userId)) {
-        
-     
+         
         $checkStmt = $pdo->prepare('SELECT * FROM Watchlist WHERE UserId = :UserId AND MovieId = :MovieId');
         $checkStmt->execute([
             'UserId' => $userId,
@@ -35,10 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
         }
     }
-    
 
    
-    header("Location: info.php?MovieId=" . $movieId);
+    header("Location: ../info.php?MovieId=$movieId&genre=$genre");
     exit; 
 }
 

@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('Europe/Stockholm');
-require_once('../../Slutprojekt-app.php');
+require_once('../../../Slutprojekt-app.php');
 
 $messages = array();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

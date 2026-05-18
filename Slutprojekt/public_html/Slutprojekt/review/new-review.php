@@ -1,5 +1,5 @@
 <?php
-require_once('../../Slutprojekt-app.php');
+require_once('../../../Slutprojekt-app.php');
 
 
 $ReviewStmt = $pdo->prepare("SELECT * FROM Reviews WHERE MovieId = :MovieId");
@@ -12,4 +12,4 @@ $view['MovieId'] = $_GET['MovieId'] ?? null;
 
 // print_r($userResult);
 
-$twig->display('new-review.html.twig', context: $view );
+$twig->display('review/review.html.twig', context: $view );
