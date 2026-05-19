@@ -7,18 +7,18 @@
     <form action="create-account-formhandler.php" method="post">
          
         <div>
-            <label for="Username">Användarnamn:</label>
+            <label for="Username">Username:</label>
             <input type="text" name="Username" id="Username" required>
         </div>
         <div>
-            <label for="Password">Lösenord: </label>
+            <label for="Password">Password: </label>
             <input type="password" name="Password" id="Password" required>
         </div>
         <div>
-            <label for="repeated-password">Upprepa lösenordet: </label>
+            <label for="repeated-password">Repeat password: </label>
             <input type="password" name="repeated-password" id="repeated-password" required>
         </div>
-        <input type="submit" value="Skapa konto">
+        <input type="submit" value="Make Account">
     </form>
 
 {% for item in messages %}
