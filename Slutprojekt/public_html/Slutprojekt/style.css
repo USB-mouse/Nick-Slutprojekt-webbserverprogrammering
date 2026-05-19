@@ -167,8 +167,6 @@ footer{
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     transition: 0.3s;
-  
-   
 }
 
 .action {
@@ -241,4 +239,9 @@ footer{
 .watchlistbtn-remove:hover {
     color: var(--second-color, #e10531);
     border-color: var(--second-color, #e10531);
+}
+textarea {
+    width: 20rem;
+    height: 10rem;
+    resize: none;
 }

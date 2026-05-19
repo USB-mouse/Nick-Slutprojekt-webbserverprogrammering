@@ -16,7 +16,7 @@ $view['newest'] = $newestMovies;
  
 
 $sql = "SELECT * FROM Movies";
-//vi ska kunna se om man har tryckt på en filter 
+//kunna se om man har tryckt på en filter 
 $sort = $_GET['sort'] ?? '';
 $type = $_GET['genre'] ?? '';
 

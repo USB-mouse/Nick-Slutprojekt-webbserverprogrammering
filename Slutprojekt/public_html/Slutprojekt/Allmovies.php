@@ -14,7 +14,7 @@ if ($genre != '') {
 
 //sorterar på vad man har tryckt med get 
 if ($sort === 'newest') {
-    $sql .= " ORDER BY DateAdded DESC";
+    $sql .= " ORDER BY MovieDateAdded DESC";
 } elseif ($sort === 'al') {
     $sql .= " ORDER BY Title ASC";
 }

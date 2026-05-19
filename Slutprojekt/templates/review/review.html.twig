@@ -17,7 +17,7 @@
       <h3>{{ item.ReviewTitle }} </h2>  
        <p> ⭐ {{ item.Rating }}/10 </p>
        <p> {{ item.ReviewContent }} </p>
-       <p><i> {{ item.User }} vid {{item.ReviewTime | date("d/m-Y h:i") }} </i></p>
+       <p><i> {{ item.Username }} vid {{item.ReviewTime | date("d/m-Y h:i") }} </i></p>
      </div>
   {% else %}
         <div>Finns inga review</div>

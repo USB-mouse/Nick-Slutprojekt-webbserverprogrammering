@@ -10,6 +10,8 @@ $view["review"] = $ReviewResult;
 
 $view['MovieId'] = $_GET['MovieId'] ?? null;
 
+$view['UserId'] = $_SESSION['UserId'] ?? null;
+
 // print_r($userResult);
 
-$twig->display('review/review.html.twig', context: $view );
+$twig->display('review/new-review.html.twig', context: $view );

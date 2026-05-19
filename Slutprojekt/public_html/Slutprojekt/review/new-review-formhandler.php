@@ -8,31 +8,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  $ReviewTime = date('Y-m-d H:i:s'); 
 // Har formuläret fyllts i?
 if (empty($_POST["ReviewTitle"]) || empty($_POST["ReviewContent"])) {
-    $messages[] = "Formuläret är inte korrekt ifyllt!";
+    $messages[] = "The form is not filled out correctly!";
 } 
 $titleLength = strlen($_POST['ReviewTitle']);
 $contentLength = strlen($_POST['ReviewContent']);
 
 if ($titleLength > 20) {
-    $messages[] = "Din titel är för lång ($titleLength tecken). Maxlängd är 20 tecken.";
+    $messages[] = "Your title is too long ($titleLength characters). Maximum length is 20 characters.";
     }
-if ($contentLength > 400) {
-    $messages[] = "Ditt innehåll är för långt ($contentLength tecken). Maxlängd är 400 tecken.";
+if ($contentLength > 300) {
+    $messages[] = "Your content is too long ($contentLength characters). Maximum length is 300 characters.";
     }
 
-
-$stmt = $pdo->prepare('INSERT INTO Reviews (ReviewTitle, ReviewContent, MovieId, Rating, ReviewTime) VALUES (:ReviewTitle, :ReviewContent, :MovieId, :Rating, :ReviewTime)');
+if (empty($messages)) {
+$stmt = $pdo->prepare('INSERT INTO Reviews (ReviewTitle, ReviewContent, MovieId, Rating, ReviewTime, UserId) VALUES (:ReviewTitle, :ReviewContent, :MovieId, :Rating, :ReviewTime, :UserId)');
 $stmt->execute([
 
     'ReviewTitle' => $_POST['ReviewTitle'], 
     'ReviewContent' => $_POST ['ReviewContent'],
     'MovieId' => $_POST['MovieId'],
     'Rating' => $_POST['Rating'],
-    'ReviewTime' => $ReviewTime
+    'ReviewTime' => $ReviewTime,
+    'UserId' => $_POST['UserId'],
 ]);
 
-
-header("Location: review.php?MovieId=" . $_GET['MovieId']);
+header("Location: review.php?MovieId=" . $_POST['MovieId']);
     exit; 
-
+}
+else {
+     echo "<h3>Something went wrong:</h3>";
+    foreach ($messages as $error) {
+        echo "<li>$error</li>";
+        }
+        echo "<br><button onclick='history.back()'>Go back and change</button>";
+    
+        exit; 
+    }
 }

@@ -9,6 +9,7 @@ new-review
 
   <form action="new-review-formhandler.php?MovieId={{MovieId}}"  method="post">
     <input type="hidden" name="MovieId" value="{{ MovieId }}">
+    <input type="hidden" name="UserId" value="{{UserId}}">
     <label for="ReviewTitle">Titel</label><br>
     <input type="text" name="ReviewTitle" id="ReviewTitle" required><br>
     <label for="ReviewContent"></label> Skriv ditt inlägg här<br>
